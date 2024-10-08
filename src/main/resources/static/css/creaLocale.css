@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Nascondi la scrollbar orizzontale */
+    background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+}
+
+@keyframes color {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+/* Titolo */
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 36px; /* Grandezza del font */
+    margin-bottom: 20px; /* Margine inferiore */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Ombra del testo */
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px; /* Larghezza massima del form */
+}
+
+/* Stile per le etichette */
+form label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px; /* Margine inferiore */
+}
+
+/* Input styles */
+form input[type="text"],
+form input[type="file"] {
+    width: 100%; /* Larghezza al 100% */
+    padding: 10px; /* Padding interno */
+    margin: 10px 0; /* Margini superiori e inferiori */
+    border: 1px solid #ccc; /* Bordo */
+    border-radius: 5px; /* Angoli arrotondati */
+    font-size: 16px; /* Dimensione del font */
+}
+
+/* Pulsante di invio */
+form input[type="submit"] {
+    background-color: #f48e21; /* Colore di sfondo */
+    color: white; /* Colore del testo */
+    border: none; /* Nessun bordo */
+    padding: 10px 20px; /* Padding interno */
+    cursor: pointer; /* Cursore a mano */
+    border-radius: 5px; /* Angoli arrotondati */
+    font-size: 16px; /* Dimensione del font */
+    transition: background-color 0.3s, transform 0.3s; /* Transizione */
+}
+
+form input[type="submit"]:hover {
+    background-color: #d2001a; /* Colore di sfondo al passaggio del mouse */
+    transform: scale(1.05); /* Leggero ingrandimento */
+}
