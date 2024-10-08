@@ -28,3 +28,6 @@
 - **Spring Boot 3.3.2**
 - **MySQL** per la gestione del database
 - **Thymeleaf** come motore di template per la parte frontend
+
+**Autore** - Team di 5 studenti di Generation Italy. 
+           - Il sottoscritto si è occupato principalmente della parte beackend e ha effettuato delle modifiche nella parte frontend.
