@@ -10,13 +10,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-
+import generation.gestionaleEventi.services.AppService;
 import generation.gestionaleEventi.entities.Evento;
 import generation.gestionaleEventi.entities.Gestore;
 import generation.gestionaleEventi.entities.Locale;
+import generation.gestionaleEventi.entities.Persona;
 import generation.gestionaleEventi.services.GestoreService;
 import generation.gestionaleEventi.services.LocaleService;
 import jakarta.servlet.http.HttpSession;
@@ -26,6 +28,8 @@ public class LocaleController {
     private GestoreService gestoreService;
     @Autowired
     private LocaleService localeService;
+    @Autowired
+    private AppService appService;
 
      @GetMapping("/createLocale-form")
     public String creaLocaleForm( HttpSession session, Model model) {
@@ -85,5 +89,23 @@ public class LocaleController {
         model.addAttribute("message", "Locale creato con successo!");
         return "redirect:/area-gestore";
     }
+    @GetMapping("/locale/delete/{idLocale}")
+    public String delete(@PathVariable("idLocale") Long idLocale, HttpSession session) {
+        Persona p = (Persona) session.getAttribute("persona");
+        String role = (String) session.getAttribute("role");
     
-}    
+        if ("gestore".equals(role) && p instanceof Gestore) {
+            if (idLocale <= 0) {
+                appService.setMessage("Errore: ID locale non valido");
+            } else {
+                localeService.delete(idLocale); // Assicurati che questo metodo esista e funzioni correttamente
+                appService.setMessage("Eliminazione avvenuta con successo");
+            }
+            return "redirect:/area-gestore"; // Torna alla lista dei locali
+        }
+    
+        appService.setMessage("Errore: richiesta non autorizzata");
+        return "redirect:/loginpage"; // Reindirizza se non autorizzato
+    }
+    
+     }    

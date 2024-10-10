@@ -267,7 +267,7 @@ body {
 }
 
 /* Pulsanti generali */
-.login-btn, .register-btn, .organize-event-btn, .all-events-btn, .participate-btn {
+.login-btn, .register-btn, .organize-event-btn, .all-events-btn,.home-btn, .participate-btn {
     background-color: #f48e21; /* Colore arancione per i pulsanti */
     color: white;
     border: 1px solid #f48e21; /* Bordo dello stesso colore */
@@ -276,6 +276,8 @@ body {
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
+    text-decoration: none; /* Rimuove la sottolineatura dai link */
+
 }
 
 .login-btn:hover, .register-btn:hover, .organize-event-btn:hover, .all-events-btn:hover, .participate-btn:hover {

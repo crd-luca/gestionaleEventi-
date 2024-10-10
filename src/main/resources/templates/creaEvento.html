@@ -10,8 +10,7 @@
 <body>
     <h1>Crea Nuovo Evento</h1>
     <form action="/createEvent" method="post" enctype="multipart/form-data">
-        <!-- ID del locale come campo nascosto -->
-        <input type="hidden" id="idLocale" name="idLocale" value="1234">
+        <input type="hidden" name="idLocale" th:value="${locale.id}" />
 
         <label for="nome">Nome Evento:</label>
         <input type="text" id="nome" name="nome" required>

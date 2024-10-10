@@ -69,12 +69,15 @@
               <p class="event-date" th:text="'Data: ' + ${#dates.format(evento.giorno, 'dd/MM/yyyy')}"></p>
 
               </p>
+            
               <p class="event-time" th:text="'Orario: ' + ${evento.orario}">
                 Orario:
               </p>
               <p class="event-price" th:text="'Prezzo: €' + ${evento.prezzo}">
                 Prezzo:
               </p>
+              <p class="event-locale" th:text="'Locale: ' + ${evento.locale.nome}">Locale:</p>
+
              
             </div>
           </div>
