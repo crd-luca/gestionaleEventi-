@@ -22,6 +22,10 @@
 ### 3. Visualizzazione degli eventi
 - **Partecipazione agli eventi**: L'idea originale prevedeva che i clienti potessero registrarsi e partecipare agli eventi. Anche se questa funzionalità non è completamente implementata, è stata pianificata l'integrazione di un sistema per permettere agli utenti di iscriversi e cancellarsi dagli eventi.
 
+- **Note per lo Sviluppo**
+Backend: La parte backend è stata completata, ma ci sono alcune funzionalità e dettagli da implementare.
+Frontend: È prevista una fase di completamento del frontend, con l'obiettivo di migliorare l'esperienza utente e l'aspetto visivo dell'applicazione.
+
 - ## Requisiti del progetto
 
 - **Java 17**
